@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/19 16:55:26 by adelille         ###   ########.fr       */
+/*   Updated: 2020/10/20 15:21:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ typedef struct	s_split_next
 
 void    *ft_memset(void *s, int c, size_t len);
 void    *ft_bzero(void *s, size_t n);
+void    *ft_memcpy(void *dest, const void *src, size_t n);
+void    *ft_memccpy(void *dest, const void *src, int c, size_t n);
+void    *ft_memmove(void *dest, const void *src, size_t n);
 size_t  ft_strlen(const char *str);
 
 #endif
