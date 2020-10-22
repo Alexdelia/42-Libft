@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:02:43 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/20 15:18:14 by adelille         ###   ########.fr       */
+/*   Updated: 2020/10/22 14:40:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void    *ft_memmove(void *dest, const void *src, size_t n)
 {
-    int i;
+	int i;
 
-    if (!dest || !src)
-        return (NULL);
-    if (dest > src)
-    {
-        i = (int)n - 1;
-        while (i >= 0)
-        {
-            *(char*)(dest + i) = *(char*)(src + i);
-            i--;
-        }
-    }
-    else
-    {
-        i = 0;
-        while (i < (int)n)
-        {
-            *(char*)(dest + i) = *(char*)(src + i);
-            i++;
-        }
-    }
-    return (dest);
+	if (!dest || !src)
+		return (NULL);
+	if (dest > src)
+	{
+		i = (int)n - 1;
+		while (i >= 0)
+		{
+			*(char*)(dest + i) = *(char*)(src + i);
+			i--;
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < (int)n)
+		{
+			*(char*)(dest + i) = *(char*)(src + i);
+			i++;
+		}
+	}
+	return (dest);
 }

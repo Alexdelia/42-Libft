@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 16:56:45 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/19 17:00:59 by adelille         ###   ########.fr       */
+/*   Updated: 2020/10/22 14:39:24 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void    ft_bzero(void *s, size_t n)
 {
-    size_t  i;
+	size_t  i;
 
-    if (!s)
-        return ;
-    i = 0;
-    while (i < n)
-    {
-        *(char*)(s + i) = 0;
-        i++;
-    }
+	if (!s)
+		return ;
+	i = 0;
+	while (i < n)
+	{
+		*(char*)(s + i) = 0;
+		i++;
+	}
 }
