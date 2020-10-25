@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/25 16:48:38 by adelille          #+#    #+#             */
+/*   Updated: 2020/10/25 17:02:50 by adelille         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	atoi(const char *nptr)
+{
+	int	i;
+	int	res;
+	int	neg;
+
+	i = 0;
+	res = 0;
+	neg = 1;
+	while (nptr[i] == '\t' || nptr[i] == '\v' || nptr[i] == '\n'
+			|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+		neg = (nptr[i] == '-' ? -neg : neg);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+		res = res * 10 + (nptr[i++] - 48);
+	return (res * neg);
+}
