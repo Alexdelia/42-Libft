@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 16:48:38 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/25 17:02:50 by adelille         ###   ########.fr       */
+/*   Updated: 2020/10/26 11:53:46 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ int	atoi(const char *nptr)
 			|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
-		neg = (nptr[i] == '-' ? -neg : neg);
+	{
+		if (nptr[i] == '-')
+			neg = -neg;
+		i++;
+	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 		res = res * 10 + (nptr[i++] - 48);
 	return (res * neg);
