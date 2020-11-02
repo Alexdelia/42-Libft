@@ -6,11 +6,11 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 16:56:45 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/22 14:39:24 by adelille         ###   ########.fr       */
+/*   Updated: 2020/10/27 21:53:33 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.c"
+#include "libft.h"
 
 void    ft_bzero(void *s, size_t n)
 {

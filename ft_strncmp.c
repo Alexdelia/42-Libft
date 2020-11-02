@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 16:17:00 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/25 16:22:58 by adelille         ###   ########.fr       */
+/*   Updated: 2020/10/27 21:59:22 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (s1[i] && s2[i] && i < n)

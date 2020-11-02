@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 16:38:51 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/27 16:47:03 by adelille         ###   ########.fr       */
+/*   Updated: 2020/10/27 21:57:03 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (!(dst = malloc(nmemb * size)))
 		return (NULL);
-	ft_bzero(dst, count);
+	ft_bzero(dst, nmemb);
 	return (dst);
 }
