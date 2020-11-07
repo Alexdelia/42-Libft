@@ -6,13 +6,13 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:13:07 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/02 02:24:28 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/07 05:06:58 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_char_in_str(char c, char *str)
+int		ft_char_in_str(char c, char const *str)
 {
 	size_t	i;
 
@@ -34,10 +34,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	start = 0;
-	while (ft_char_in_str(s1[start], set) == 1)
+	while (s1[start] && ft_char_in_str(s1[start], set))
 		start++;
-	end = ft_strlen(s1) - 1;
-	while (ft_char_in_str(s1[end], set) == 1)
+	end = ft_strlen(s1);
+	while (end > start && ft_char_in_str(s1[end - 1], set))
 		end--;
 	if (!(str = (char*)malloc(sizeof(*s1) * (end - start + 1))))
 		return (NULL);

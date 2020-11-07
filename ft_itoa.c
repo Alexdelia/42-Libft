@@ -6,44 +6,58 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 02:22:35 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/07 02:39:18 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/07 04:49:55 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n);
+static int
+	ft_abs(int nbr)
+{
+	if (nbr < 0)
+		nbr = -nbr;
+	return (nbr);
+}
+
+static void
+	ft_strrev(char *str)
+{
+	size_t	len;
+	size_t	i;
+	char	tmp;
+
+	len = ft_strlen(str);
+	i = 0;
+	while (i < len / 2)
+	{
+		tmp = str[i];
+		str[i] = str[len - i - 1];
+		str[len - i - 1] = tmp;
+		i++;
+	}
+}
+
+char
+	*ft_itoa(int n)
 {
 	char	*str;
-	int		neg;
-	int		tmp;
-	size_t	i;
+	int		is_neg;
+	size_t	len;
 
-	neg = 1;
-	i = 0;
-	if (n < 0)
-	{
-		n = -n;
-		neg = -neg;
-		i++;
-	}
-	tmp = n;
-	while (tmp != 0)
-	{
-		tmp = (tmp / 10);
-		i++;
-	}
-	if (!(str = ft_calloc(i + 1, sizeof(*str))))
+	is_neg = (n < 0);
+	if (!(str = ft_calloc(11 + is_neg, sizeof(*str))))
 		return (NULL);
 	if (n == 0)
 		str[0] = '0';
-	while (i > 0)
+	len = 0;
+	while (n != 0)
 	{
-		str[i] = '0' + (n % 10);
+		str[len++] = '0' + ft_abs(n % 10);
 		n = (n / 10);
-		i--;
 	}
-	if (neg == -1)
-		str[0] == '-';
+	if (is_neg)
+		str[len] = '-';
+	ft_strrev(str);
 	return (str);
 }
