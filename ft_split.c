@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:30:16 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/02 02:56:28 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/16 14:23:37 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ void	*ft_free_split(char **split, size_t elts)
 }
 
 void	*ft_split_range(char **split, char const *s,
-			t_split_next *st, t_split_next *lt)
+		t_split_next *st, t_split_next *lt)
 {
-		split[lt->len] = ft_substr(s, st->start, st->len);
-		if (!split[lt->len])
-			return (ft_free_split(split, lt->len));
-		lt->len++;
-		return (split);
+	split[lt->len] = ft_substr(s, st->start, st->len);
+	if (!split[lt->len])
+		return (ft_free_split(split, lt->len));
+	lt->len++;
+	return (split);
 }
 
 void	*ft_split_by_char(char **split, char const *s, char c)
