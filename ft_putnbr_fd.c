@@ -6,15 +6,27 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 02:56:13 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/07 03:08:26 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/16 14:44:12 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	main_loop(int i, int n, int fd)
 {
 	char	c;
+
+	while (i > 0)
+	{
+		c = '0' + (n % 10);
+		n = (n / 10);
+		i--;
+		write(fd, &c, 1);
+	}
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
 	int		tmp;
 	size_t	i;
 
@@ -36,11 +48,5 @@ void	ft_putnbr_fd(int n, int fd)
 		tmp = (tmp / 10);
 		i++;
 	}
-	while (i > 0)
-	{
-		c = '0' + (n % 10);
-		n = (n / 10);
-		i--;
-		write(fd, &c, 1);
-	}
+	main_loop(i, n, fd);
 }
