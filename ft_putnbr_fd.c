@@ -6,47 +6,39 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 02:56:13 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/16 14:44:12 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/17 11:29:48 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	main_loop(int i, int n, int fd)
+static int	ft_abs(int nbr)
 {
-	char	c;
-
-	while (i > 0)
-	{
-		c = '0' + (n % 10);
-		n = (n / 10);
-		i--;
-		write(fd, &c, 1);
-	}
+	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void		ft_putnbr_fd(int n, int fd)
 {
-	int		tmp;
-	size_t	i;
+	char	str[13];
+	int		is_neg;
+	int		len;
 
+	is_neg = (n < 0);
+	ft_bzero(str, 13);
 	if (n == 0)
+		str[0] = '0';
+	len = 0;
+	while (n != 0)
 	{
-		write(fd, "0", 1);
-		return ;
+		str[len++] = '0' + ft_abs(n % 10);
+		n = (n / 10);
 	}
-	i = 0;
-	if (n < 0)
-	{
-		n = -n;
-		write(fd, "-", 1);
-		i++;
-	}
-	tmp = n;
-	while (tmp != 0)
-	{
-		tmp = (tmp / 10);
-		i++;
-	}
-	main_loop(i, n, fd);
+	if (is_neg)
+		str[len] = '-';
+	else if (len > 0)
+		len--;
+	while (len >= 0)
+		write(fd, &str[len--], 1);
 }
