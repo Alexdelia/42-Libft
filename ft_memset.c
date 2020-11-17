@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 16:56:19 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/16 14:26:15 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/17 18:21:35 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *s, int c, size_t len)
 {
 	size_t	i;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	while (i < len)
 	{

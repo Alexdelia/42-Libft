@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 16:47:31 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/25 16:48:14 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/17 19:38:30 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char
 	size_t	i;
 	size_t	j;
 
-	if (!s || !to_find)
-		return (NULL);
-	if (!to_find || !to_find[0])
+	if (!to_find[0])
 		return ((char*)s);
 	i = 0;
 	while (s[i] && i < len)
