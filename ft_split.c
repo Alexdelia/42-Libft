@@ -6,13 +6,13 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:30:16 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/16 14:23:37 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/17 17:36:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_malloc_split(char const *s, char c)
+static char		**ft_malloc_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -31,7 +31,7 @@ char	**ft_malloc_split(char const *s, char c)
 	return (split);
 }
 
-void	*ft_free_split(char **split, size_t elts)
+static void		*ft_free_split(char **split, size_t elts)
 {
 	size_t	i;
 
@@ -45,7 +45,7 @@ void	*ft_free_split(char **split, size_t elts)
 	return (NULL);
 }
 
-void	*ft_split_range(char **split, char const *s,
+static void		*ft_split_range(char **split, char const *s,
 		t_split_next *st, t_split_next *lt)
 {
 	split[lt->len] = ft_substr(s, st->start, st->len);
@@ -55,7 +55,7 @@ void	*ft_split_range(char **split, char const *s,
 	return (split);
 }
 
-void	*ft_split_by_char(char **split, char const *s, char c)
+static void		*ft_split_by_char(char **split, char const *s, char c)
 {
 	size_t			i;
 	t_split_next	st;
@@ -84,7 +84,7 @@ void	*ft_split_by_char(char **split, char const *s, char c)
 	return (split);
 }
 
-char	**ft_split(char const *s, char c)
+static char		**ft_split(char const *s, char c)
 {
 	char	**split;
 

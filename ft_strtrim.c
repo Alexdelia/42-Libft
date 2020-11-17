@@ -6,13 +6,13 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:13:07 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/07 05:06:58 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/17 17:31:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_char_in_str(char c, char const *str)
+static int	ft_char_in_str(char c, char const *str)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ int		ft_char_in_str(char c, char const *str)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	start;
