@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 02:22:35 by adelille          #+#    #+#             */
-/*   Updated: 2021/02/26 06:49:46 by adelille         ###   ########.fr       */
+/*   Updated: 2021/02/26 07:00:45 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void		ft_strrev(char *str)
 
 	len = ft_strlen(str);
 	i = 0;
-	tmp = '0';
 	while (i < len / 2)
 	{
 		tmp = str[i];
