@@ -6,7 +6,7 @@
 #    By: adelille <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/19 13:38:18 by adelille          #+#    #+#              #
-#    Updated: 2020/11/17 11:29:02 by user42           ###   ########.fr        #
+#    Updated: 2021/02/26 07:28:00 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 						ft_lstmap.c ft_lstnew.c ft_lstsize.c
 BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= gcc
+CC				= clang
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
@@ -46,4 +46,4 @@ re:				fclean $(NAME)
 bonus:			$(OBJS) $(BONUS_OBJS)
 					ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re bonus so
