@@ -6,9 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:09:31 by adelille          #+#    #+#             */
-/*   Updated: 2021/02/26 13:27:27 by adelille         ###   ########.fr       */
+/*   Updated: 2021/02/28 17:40:13 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_ps(char *str)
 {
