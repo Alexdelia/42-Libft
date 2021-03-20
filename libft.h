@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/02/28 18:53:07 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 14:49:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# define TRUE 1
+# define FALSE 0
 
 typedef	struct	s_list
 {
@@ -74,6 +77,16 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
+# define MAG	"\033[0;35m"
+# define BMAG	"\033[1;35m"
+# define IMAG	"\033[3;35m"
+# define BIMAG	"\033[1;3;35m"
+# define RED	"\033[1;31m"
+# define GRN	"\033[1;32m"
+# define SBLU	"\033[5;3;34m"
+# define DEF	"\033[0m"
+
 int				ft_ps(char *str);
+int				ft_psc(char *str, char *color);
 
 #endif
