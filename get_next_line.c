@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:45:40 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/20 11:35:05 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:48:27 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int		sub_line_and_dup_store(char **store, char **line, int i)
 {
 	char	*tmp;
 	
-	*line = ft_substr(*store, 0, i);
-	tmp = ft_strdup(&(*store)[i + 1]);
+	*line = gnl_ft_substr(*store, 0, i);
+	tmp = gnl_ft_strdup(&(*store)[i + 1]);
 	free(*store);
 	*store = tmp;
 	return (1);
@@ -43,19 +43,19 @@ int		get_next_line_end(char **store, char **line)
 
 	if (*store == 0)
 	{
-		*line = ft_strdup("");
+		*line = gnl_ft_strdup("");
 		return (0);
 	}
 	if (*store && (i = check_newline(*store)) >= 0)
 		return (sub_line_and_dup_store(store, line, i));
 	else if (*store[0] != '\0')
 	{
-		*line = ft_strdup(*store);
+		*line = gnl_ft_strdup(*store);
 		free(*store);
 		*store = 0;
 		return (0);
 	}
-	*line = ft_strdup("");
+	*line = gnl_ft_strdup("");
 	free(*store);
 	*store = 0;
 	return (0);
