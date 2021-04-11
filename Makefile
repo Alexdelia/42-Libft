@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/04/11 18:45:07 by adelille         ###   ########.fr        #
+#    Updated: 2021/04/11 19:06:46 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,20 +48,22 @@ SRCSPATH =	./srcs/
 OBJSPATH =	./objs/
 INC =		./includes/
 
-SRCSNAME =	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
-				ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
-				ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
-				ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_memccpy.c \
-				ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
-				ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
-				ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c \
-				ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
-				ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c \
-				ft_ps.c get_next_line.c get_next_line_utils.c ft_strcmp.c
-
+SRCSNAME =	I-O/ft_ps.c I-O/get_next_line.c I-O/get_next_line_utils.c \
+				I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c I-O/ft_putnbr_fd.c I-O/ft_putstr_fd.c \
+				str/ft_atoi.c str/ft_itoa.c str/ft_bzero.c str/ft_split.c str/ft_strchr.c \
+				str/ft_strcmp.c str/ft_strdup.c str/ft_strjoin.c str/ft_strlcat.c \
+				str/ft_strlcpy.c str/ft_strlen.c str/ft_strmapi.c str/ft_strncmp.c \
+				str/ft_strnstr.c str/ft_strrchr.c str/ft_strtrim.c str/ft_substr.c \
+				str/ft_tolower.c str/ft_toupper.c \
+				mem/ft_calloc.c mem/ft_memccpy.c mem/ft_memchr.c mem/ft_memcmp.c \
+				mem/ft_memcpy.c mem/ft_memmove.c mem/ft_memset.c \
+				lst/ft_lstadd_back.c lst/ft_lstadd_front.c lst/ft_lstclear.c lst/ft_lstdelone.c \
+				lst/ft_lstiter.c lst/ft_lstlast.c lst/ft_lstmap.c lst/ft_lstnew.c lst/ft_lstsize.c \
+				bool_detect/ft_isalnum.c bool_detect/ft_isalpha.c bool_detect/ft_isascii.c \
+				bool_detect/ft_isdigit.c bool_detect/ft_isprint.c
 
 SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
-OBJSNAME = $(SRCSNAME:.c=.o)
+OBJSNAME = $(SRCS:.c=.o)
 OBJS = $(addprefix $(OBJSPATH), $(notdir $(OBJSNAME)))
 
 %.o: %.c
