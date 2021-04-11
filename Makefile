@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/04/11 19:07:31 by adelille         ###   ########.fr        #
+#    Updated: 2021/04/11 19:28:35 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ SRCSPATH =	./srcs/
 OBJSPATH =	./objs/
 INC =		./includes/
 
-SRCSNAME =	I-O/ft_ps.c I-O/get_next_line.c I-O/get_next_line_utils.c \
+SRCSNAME =	I-O/ft_ps.c I-O/parse/get_next_line.c I-O/parse/get_next_line_utils.c \
 				I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c I-O/ft_putnbr_fd.c I-O/ft_putstr_fd.c \
 				str/ft_atoi.c str/ft_itoa.c str/ft_bzero.c str/ft_split.c str/ft_strchr.c \
 				str/ft_strcmp.c str/ft_strdup.c str/ft_strjoin.c str/ft_strlcat.c \
