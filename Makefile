@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/04/11 19:06:46 by adelille         ###   ########.fr        #
+#    Updated: 2021/04/11 19:07:31 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RM = 	rm -rf
 
 # **************************************************************************** #
 
-#MAKEFLAGS += --silent
+MAKEFLAGS += --silent
 
 B =		$(shell tput bold)
 BLA =	$(shell tput setaf 0)
