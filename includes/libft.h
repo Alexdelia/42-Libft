@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/11 18:48:04 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/13 15:08:34 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 
 # define TRUE 1
 # define FALSE 0
+
+# define STDIN 0
+# define STDOUT 1
+# define STDERR 2
 
 typedef struct s_list
 {
@@ -89,6 +93,11 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
 int				ft_ps(char *str);
 int				ft_psc(char *str, char *color);
+int				ft_pserc(char *str, char *color);
+int				ft_pn(int nbr);
+int				ft_pnc(int nbr, char *color);
+int				ft_pnerc(int nbr, char *color);
 int				ft_strcmp(const char *s1, const char *s2);
+int				ft_nbrlen(int nb);
 
 #endif

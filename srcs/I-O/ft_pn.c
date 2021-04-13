@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps.c                                            :+:      :+:    :+:   */
+/*   ft_pn.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 13:09:31 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/13 15:05:02 by adelille         ###   ########.fr       */
+/*   Created: 2021/04/13 15:04:32 by adelille          #+#    #+#             */
+/*   Updated: 2021/04/13 15:07:28 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_ps(char *str)
+int	ft_pn(int nbr)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	write(STDOUT, str, i);
-	return (i);
+	ft_putnbr_fd(nbr, STDOUT);
+	return (ft_nbrlen(nbr));
 }
 
-int	ft_psc(char *str, char *color)
+int	ft_pnc(int nbr, char *color)
 {
 	write(STDOUT, color, ft_strlen(color));
-	write(STDOUT, str, ft_strlen(str));
+	ft_putnbr_fd(nbr, STDOUT);
 	write(STDOUT, DEF, ft_strlen(DEF));
-	return (ft_strlen(color) + ft_strlen(str) + ft_strlen(DEF));
+	return (ft_strlen(color) + ft_nbrlen(nbr + ft_strlen(DEF));
 }
 
-int	ft_pserc(char *str, char *color)
+int	ft_pnerc(int nbr, char *color)
 {
 	write(STDERR, color, ft_strlen(color));
-	write(STDERR, str, ft_strlen(str));
+	ft_putnbr_fd(nbr, STDERR);
 	write(STDERR, DEF, ft_strlen(DEF));
-	return (ft_strlen(color) + ft_strlen(str) + ft_strlen(DEF));
+	return (ft_strlen(color) + ft_nbrlen(nbr) + ft_strlen(DEF));
 }
