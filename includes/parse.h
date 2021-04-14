@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 19:28:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/14 17:54:12 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:07:59 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,12 @@ const char		*ft_parsef(const char *str,
 const char		*ft_parseld(const char *str,
 					long double *num, t_cmap cm, int len);
 
+int				ft_sfbuftoarg(t_sfb *b, t_sfc *arg, t_cmap cm);
+int				ft_sfbuftofarg(t_sfb *b, t_sfc *arg, t_cmap cm);
+int				ft_sfbuftouarg(t_sfb *b, t_sfc *arg, t_cmap cm);
+
+
+void			ft_bufskip(const char **str, int len, t_cmap cm);
 int				ft_buftoi(const char **str, int len, t_cmap cm);
 long			ft_buftol(const char **str, int len, t_cmap cm);
 intmax_t		ft_buftoj(const char **str, int len, t_cmap cm);

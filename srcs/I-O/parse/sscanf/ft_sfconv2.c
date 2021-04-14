@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 17:28:15 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/14 17:36:10 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:08:45 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_valid_num(char c, const char *s, int len)
 
 int			ft_sfconv_u(const char **c, t_sfb *b, t_sfc *arg)
 {
-	b->c = ft_strpskp(b->c, FT_WHITESPACE);
+	b->c = ft_str_point_skip(b->c, FT_WHITESPACE);
 	if (!ft_valid_num(**c, b->c, arg->maxwidth))
 		return (-1);
 	else if (!(arg->flag & SFF_IGNORE))

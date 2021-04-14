@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:44:25 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/14 16:49:31 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:09:12 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_stridx(const char *str, int c)
 	ch = (char)c;
 	while (str[i])
 	{
-		if (s[i] == ch)
+		if (str[i] == ch)
 			return (i);
 		++i;
 	}

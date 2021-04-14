@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:23:42 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/14 17:21:42 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:09:52 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char		*ft_str_point_skip(const char *str, const char *skipset)
 {
 	while (*str)
 	{
-		if (!ft_str_point_chr(skipset, int(*(str++))))
+		if (!ft_str_point_chr(skipset, (int)(*(str++))))
 			return ((char *)(unsigned long)(--str));
 	}
 	return ((char *)(unsigned long)str);
