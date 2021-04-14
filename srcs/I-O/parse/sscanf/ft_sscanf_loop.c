@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 19:41:15 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/11 20:00:46 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 15:30:18 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_valid_format(const char *format, t_sfb *b, size_t *len)
 	{
 		c = b->c + 1;
 		if ((*format == ' ')
-				&& ((c = ft_strpskp(b->c, FT_WHITESPACE)) == b->c))
+				&& ((c = ft_str_point_skip(b->c, FT_WHITESPACE)) == b->c))
 			return (0);
 		else if (*format != *(b->c))
 			return (0);
@@ -42,7 +42,7 @@ int			ft_sscanf_loop(const char *format, t_sfb *b)
 			break ;
 		if (b->arglen < 0)
 			b->arglen = 0;
-		format = ft_sscanf_parse(c + 1, format);
+		format = ft_sscanf_par(b, c + 1);
 	}
 	return (0);
 }
