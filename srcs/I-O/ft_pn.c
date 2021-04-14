@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 15:04:32 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/13 15:07:28 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 17:39:17 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_pnc(int nbr, char *color)
 	write(STDOUT, color, ft_strlen(color));
 	ft_putnbr_fd(nbr, STDOUT);
 	write(STDOUT, DEF, ft_strlen(DEF));
-	return (ft_strlen(color) + ft_nbrlen(nbr + ft_strlen(DEF));
+	return (ft_strlen(color) + ft_nbrlen(nbr) + ft_strlen(DEF));
 }
 
 int	ft_pnerc(int nbr, char *color)
