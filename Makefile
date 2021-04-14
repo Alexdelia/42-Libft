@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/04/14 17:38:36 by adelille         ###   ########.fr        #
+#    Updated: 2021/04/14 17:57:10 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ SRCSNAME =	I-O/ft_ps.c I-O/parse/get_next_line.c I-O/parse/get_next_line_utils.c
 				I-O/ft_pn.c \
 				I-O/parse/sscanf/ft_sscanf.c I-O/parse/sscanf/ft_sscanf_loop.c \
 				I-O/parse/sscanf/ft_sscanf_parse.c I-O/parse/sscanf/ft_sfbuftoarg.c \
-				I-O/parse/sscanf/ft_buftoyarg.c I-O/parse/sscanf/ft_sfbuftofarg.c \
+				I-O/parse/sscanf/ft_sfbuftouarg.c I-O/parse/sscanf/ft_sfbuftofarg.c \
 				I-O/parse/sscanf/ft_parse_cmap.c I-O/parse/sscanf/ft_parse_digit.c \
 				I-O/parse/sscanf/ft_parsef.c I-O/parse/sscanf/ft_parseld.c \
 				I-O/parse/sscanf/ft_sfflag1.c I-O/parse/sscanf/ft_sfflag2.c \

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 19:41:15 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/14 15:30:18 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 17:52:18 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int			ft_sscanf_loop(const char *format, t_sfb *b)
 			break ;
 		if (b->arglen < 0)
 			b->arglen = 0;
-		format = ft_sscanf_par(b, c + 1);
+		format = ft_sscanf_parse(b, c + 1);
 	}
 	return (0);
 }

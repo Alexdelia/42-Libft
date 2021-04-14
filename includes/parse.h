@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 19:28:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/14 17:19:44 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 17:54:12 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_PARSE_H
 
 # include "libft.h"
+# include <stdarg.h>
+# include <stdint.h>
 
 # define FT_DIGIT			"0123456789ABCDEF"
 # define FT_DIGIT_L			"0123456789abcdef"
@@ -137,23 +139,9 @@ typedef struct	s_key_func
 	int			(*func)(const char *, const char *, void *);
 }				t_kf;
 
-const static t_sftab	g_sf_flag_tab[] = {
-	(t_sftab){&ft_sfflag_nc, &ft_sfconv_i},
-	(t_sftab){&ft_sfflag_h, &ft_sfconv_d},
-	(t_sftab){&ft_sfflag_l, &ft_sfconv_f},
-	(t_sftab){&ft_sfflag_j, &ft_sfconv_u},
-	(t_sftab){&ft_sfflag_z, &ft_sfconv_u},
-	(t_sftab){NULL, &ft_sfconv_u},
-	(t_sftab){NULL, &ft_sfconv_s},
-	(t_sftab){NULL, &ft_sfconv_c},
-	(t_sftab){NULL, &ft_sfconv_n},
-	(t_sftab){NULL, &ft_sfconv_u},
-	(t_sftab){NULL, &ft_sfconv_n},
-	(t_sftab){NULL, &ft_sfconv_n},
-	(t_sftab){NULL, NULL}
-};
 int				ft_sscanf_loop(const char *format, t_sfb *b);
-int				ft_find_with_pointer(const char *format_to_find,
+const char		*ft_sscanf_parse(t_sfb *b, const char *format);
+const char		*ft_find_with_pointer(const char *format_to_find,
 					const char *c, size_t *len);
 const char		*ft_parse_digit(const char *str, unsigned int *num);
 const char		*ft_parsej_cmap(const char *str,
@@ -163,7 +151,7 @@ const char		*ft_parse_cmap(const char *str,
 const char		*ft_parsef(const char *str,
 					double *num, t_cmap cm, int len);
 const char		*ft_parseld(const char *str,
-					long double *num, t_cmap cm, int len)
+					long double *num, t_cmap cm, int len);
 
 int				ft_buftoi(const char **str, int len, t_cmap cm);
 long			ft_buftol(const char **str, int len, t_cmap cm);
@@ -180,7 +168,7 @@ const char		*ft_sfflag_h(const char *c, t_sfb *b);
 const char		*ft_sfflag_l(const char *c, t_sfb *b);
 const char		*ft_sfflag_z(const char *c, t_sfb *b);
 const char		*ft_sfflag_width(const char *c, t_sfb *b);
-const char		*ft_sfflag_nv(const char *c, t_sfb *b);
+const char		*ft_sfflag_nc(const char *c, t_sfb *b);
 
 int				ft_sfconv_d(const char **c, t_sfb *b, t_sfc *arg);
 int				ft_sfconv_i(const char **c, t_sfb *b, t_sfc *arg);
@@ -194,8 +182,23 @@ int				ft_stridx(const char *str, int c);
 int				ft_strnidx(const char *str, int c, size_t n);
 int				ft_isdigit_int(int c);
 int				ft_isupper_int(int c);
-static char		*ft_str_point_chr(const char *str, int c);
+char			*ft_str_point_chr(const char *str, int c);
 char			*ft_str_point_skip(const char *str, const char *skipset);
 
+const static t_sftab	g_sf_flag_tab[] = {
+	(t_sftab){&ft_sfflag_nc, &ft_sfconv_i},
+	(t_sftab){&ft_sfflag_h, &ft_sfconv_d},
+	(t_sftab){&ft_sfflag_l, &ft_sfconv_f},
+	(t_sftab){&ft_sfflag_j, &ft_sfconv_u},
+	(t_sftab){&ft_sfflag_z, &ft_sfconv_u},
+	(t_sftab){NULL, &ft_sfconv_u},
+	(t_sftab){NULL, &ft_sfconv_s},
+	(t_sftab){NULL, &ft_sfconv_c},
+	(t_sftab){NULL, &ft_sfconv_n},
+	(t_sftab){NULL, &ft_sfconv_u},
+	(t_sftab){NULL, &ft_sfconv_n},
+	(t_sftab){NULL, &ft_sfconv_n},
+	(t_sftab){NULL, NULL}
+};
 
 #endif

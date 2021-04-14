@@ -6,16 +6,18 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 19:16:25 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/11 19:41:03 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 17:47:40 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "parse.h"
 
 static void	ft_init_sscanf(t_sfb *buffer, const char *str, const char *format)
 {
 	buffer->arglen = -1;
 	buffer->src = str;
 	buffer->c = str;
-	buffer->red = format;
+	buffer->ref = format;
 }
 
 int			ft_sscanf(const char *str, const char *format, ...)

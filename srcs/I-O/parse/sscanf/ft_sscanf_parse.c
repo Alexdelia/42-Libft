@@ -6,24 +6,17 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:28:31 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/14 16:08:29 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/14 17:55:55 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 
-static void			ft_init_sscanf_arg(t_sfb *arg)
+static void			ft_init_sscanf_arg(t_sfc *arg)
 {
 	arg->arg = NULL;
 	arg->maxwidth = (int)(~FT_SM_I);
 	arg->flag = SFF_NONE;
-}
-
-static const char	*ft_sfflag_width(const char *c, t_sfb *b)
-{
-	c = ft_parse_digit(c, (t_ui *)&(b->arg.maxwidth));
-	b->arg.flag |= SFF_MXW_SET;
-	return (c);
 }
 
 const char			*ft_sscanf_parse(t_sfb *b, const char *format)
@@ -46,7 +39,7 @@ const char			*ft_sscanf_parse(t_sfb *b, const char *format)
 	}
 	if ((!*c) || (i == -1))
 		return (NULL);
-	if (ft_isupper((int)(*c)))
+	if (ft_isupper_int((int)(*c)))
 		b->arg.flag |= SFF_CAPITAL;
 	ret = g_sf_flag_tab[i].convert(&c, b, &(b->arg));
 	if (ret < 0)
