@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/04/14 17:57:10 by adelille         ###   ########.fr        #
+#    Updated: 2021/04/15 23:31:29 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,16 +51,6 @@ INC =		./includes/
 SRCSNAME =	I-O/ft_ps.c I-O/parse/get_next_line.c I-O/parse/get_next_line_utils.c \
 				I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c I-O/ft_putnbr_fd.c I-O/ft_putstr_fd.c \
 				I-O/ft_pn.c \
-				I-O/parse/sscanf/ft_sscanf.c I-O/parse/sscanf/ft_sscanf_loop.c \
-				I-O/parse/sscanf/ft_sscanf_parse.c I-O/parse/sscanf/ft_sfbuftoarg.c \
-				I-O/parse/sscanf/ft_sfbuftouarg.c I-O/parse/sscanf/ft_sfbuftofarg.c \
-				I-O/parse/sscanf/ft_parse_cmap.c I-O/parse/sscanf/ft_parse_digit.c \
-				I-O/parse/sscanf/ft_parsef.c I-O/parse/sscanf/ft_parseld.c \
-				I-O/parse/sscanf/ft_sfflag1.c I-O/parse/sscanf/ft_sfflag2.c \
-				I-O/parse/sscanf/ft_sfconv1.c I-O/parse/sscanf/ft_sfconv2.c \
-				I-O/parse/sscanf/ft_sfconv3.c I-O/parse/sscanf/ft_stridx.c \
-				I-O/parse/sscanf/ft_str_point_skip.c I-O/parse/sscanf/ft_find_with_pointer.c \
-				I-O/parse/sscanf/ft_isdigit_int.c I-O/parse/sscanf/ft_isupper_int.c \
 				str/ft_atoi.c str/ft_itoa.c str/ft_bzero.c str/ft_split.c str/ft_strchr.c \
 				str/ft_strcmp.c str/ft_strdup.c str/ft_strjoin.c str/ft_strlcat.c \
 				str/ft_strlcpy.c str/ft_strlen.c str/ft_strmapi.c str/ft_strncmp.c \

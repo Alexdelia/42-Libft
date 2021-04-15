@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/14 17:42:37 by adelille         ###   ########.fr       */
+/*   Updated: 2021/04/15 23:31:39 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
+# define BWHI	"\033[1;37m"
 # define MAG	"\033[0;35m"
 # define BMAG	"\033[1;35m"
 # define IMAG	"\033[3;35m"
@@ -99,6 +100,5 @@ int				ft_pnc(int nbr, char *color);
 int				ft_pnerc(int nbr, char *color);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_nbrlen(int nb);
-int				ft_sscanf(const char *str, const char *format, ...);
 
 #endif
