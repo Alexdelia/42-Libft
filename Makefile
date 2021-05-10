@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/04/15 23:31:29 by adelille         ###   ########.fr        #
+#    Updated: 2021/05/10 16:57:04 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,7 @@ objs_dir:
 #	@echo "$(B)$(MAG)$(BEL)Libft compiled.$(D)"
 
 clean:
-	@$(RM) $(OBJSNAME)
+	@$(RM) $(OBJSPATH)
 # @make clean -C $(LBPATH)
 	@echo "$(B)Cleared.$(D)"
 
