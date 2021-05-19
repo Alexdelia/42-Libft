@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/15 23:31:39 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/19 19:27:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
 int				ft_ps(char *str);
 int				ft_psc(char *str, char *color);
+int				ft_pser(char *str);
 int				ft_pserc(char *str, char *color);
 int				ft_pn(int nbr);
 int				ft_pnc(int nbr, char *color);
