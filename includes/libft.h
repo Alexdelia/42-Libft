@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/26 17:54:25 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/26 17:59:58 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ int				ft_pnc(int nbr, char *color);
 int				ft_pnerc(int nbr, char *color);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_nbrlen(int nb);
-int				ft_strlcpy(char *dst, const char *src);
+int				ft_strcpy(char *dst, const char *src);
 
 #endif
