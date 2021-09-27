@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:49:57 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/26 18:45:08 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/27 15:22:40 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strcpy(char *dst, const char *src)
 
 	i = 0;
 	size = ft_strlen(src);
-	while (i < size - 1 && src[i])
+	while (i < size && src[i])
 	{
 		dst[i] = src[i];
 		i++;
