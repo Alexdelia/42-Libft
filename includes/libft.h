@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 19:43:57 by adelille         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:00:19 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdbool.h>
 
 # define TRUE 1
 # define FALSE 0
@@ -83,7 +84,6 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
-int				ft_abs(int n);
 
 # define BWHI	"\033[1;37m"
 # define MAG	"\033[0;35m"
@@ -105,5 +105,10 @@ int				ft_pnerc(int nbr, char *color);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_nbrlen(int nb);
 int				ft_strcpy(char *dst, const char *src);
+int				ft_abs(int n);
+int				ft_next_prime(int n);
+int				ft_prev_prime(int n);
+unsigned long	ft_next_prime_ul(unsigned long n);
+unsigned long	ft_prev_prime_ul(unsigned long	n);
 
 #endif
