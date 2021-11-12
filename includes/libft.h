@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/11/07 16:02:16 by adelille         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:29:19 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,8 @@ bool			ft_is_prime_ul(unsigned long n);
 int				ft_next_prime(int n);
 int				ft_prev_prime(int n);
 unsigned long	ft_next_prime_ul(unsigned long n);
-unsigned long	ft_prev_prime_ul(unsigned long	n);
-char			*ft_strjoin_free(char *s1, char *s2, bool const f1, bool const f2);
+unsigned long	ft_prev_prime_ul(unsigned long n);
+char			*ft_strjoin_free(char *s1, char *s2,
+					bool const f1, bool const f2);
 
 #endif
