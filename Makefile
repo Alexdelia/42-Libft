@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/11/04 14:06:21 by adelille         ###   ########.fr        #
+#    Updated: 2021/11/16 23:45:27 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,14 @@ NAME =	libft.a
 CC = 	clang -Wall -Werror -Wextra
 AR =	ar rcs
 RM = 	rm -rf
+
+FLAGS = ""
 # FLAGS +=	-O2
 # FLAGS +=	-g -fsanitize=address
 
 # **************************************************************************** #
 
-MAKEFLAGS += --silent
+#MAKEFLAGS += --silent
 
 B =		$(shell tput bold)
 BLA =	$(shell tput setaf 0)
@@ -67,23 +69,22 @@ SRCSNAME =	I-O/ft_ps.c I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c \
 				bool_detect/ft_isdigit.c bool_detect/ft_isprint.c
 
 SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
-OBJSNAME = $(SRCS:.c=.o)
-OBJS = $(addprefix $(OBJSPATH), $(notdir $(OBJSNAME)))
 
-%.o: %.c
-	$(CC) $(BUFFER) -I$(INC) -c $< -o $(OBJSPATH)$(notdir $@)
+OBJSNAME = $(SRCSNAME:.c=.o)
+OBJS = $(addprefix $(OBJSPATH), $(OBJSNAME))
 
 # *************************************************************************** #
 
 all:		$(NAME)
 
-$(NAME):	objs_dir $(OBJSNAME) #lib
-	@$(AR) $(NAME) $(OBJS)
+$(NAME):	$(OBJS) #lib
+	$(AR) $(NAME) $(OBJS)
 	#@$(CC) $(FLAGS) $(OBJS) $(LBNAME) -o $(NAME)
 	@echo "$(B)$(MAG)$(NAME) compiled.$(D)"
 
-objs_dir:
-	@mkdir $(OBJSPATH) 2> /dev/null || true
+$(OBJSPATH)%.o: $(SRCSPATH)%.c
+	@mkdir -p $(dir $@) # 2> /dev/null || true
+	$(CC) $(FLAGS) -I$(INC) -c $< -o $@
 	
 #$(LBM):
 #	@make -C $(LBPATH)
