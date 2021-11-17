@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/11/17 11:48:55 by adelille         ###   ########.fr        #
+#    Updated: 2021/11/17 12:03:00 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CFLAGS =	-Wall -Werror -Wextra
 # CFLAGS +=	-fsanitize=address
 
 # **************************************************************************** #
-#	Makefile related	#
+#	MAKEFILE	#
 
 MAKEFLAGS += --silent
 
@@ -74,11 +74,13 @@ INC =		./includes/
 				bool_detect/ft_isdigit.c bool_detect/ft_isprint.c
 
 #SRCS =		$(addprefix $(SRCSPATH), $(SRCSNAME))
-SRCS =		$(wildcard $(SRCSPATH)**/*.c)
+SRCS =		$(wildcard $(SRCSPATH)*.c) $(wildcard $(SRCSPATH)**/*.c)
 SRCSNAME =	$(subst $(SRCSPATH), , $(SRCS))
 
 OBJSNAME =	$(SRCSNAME:.c=.o)
 OBJS =		$(addprefix $(OBJSPATH), $(OBJSNAME))
+
+# *************************************************************************** #
 
 define	progress_bar
 	i=0
@@ -90,7 +92,7 @@ define	progress_bar
 endef
 
 # *************************************************************************** #
-#	Rules	#
+#	RULES	#
 
 all:		launch $(NAME)
 	@printf "\n$(B)$(MAG)$(NAME) compiled.$(D)\n"
