@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/11/17 10:53:28 by adelille         ###   ########.fr        #
+#    Updated: 2021/11/17 11:47:11 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ CFLAGS =	-Wall -Werror -Wextra
 #	Makefile related	#
 
 MAKEFLAGS += --silent
+
+SHELL := bash
 
 B =		$(shell tput bold)
 BLA =	$(shell tput setaf 0)
@@ -78,19 +80,32 @@ SRCSNAME =	$(subst $(SRCSPATH), , $(SRCS))
 OBJSNAME =	$(SRCSNAME:.c=.o)
 OBJS =		$(addprefix $(OBJSPATH), $(OBJSNAME))
 
+define	progress_bar
+	i=0
+	while [[ $$i -le $(words $(SRCS)) ]] ; do \
+		printf " " ; \
+		((i = i + 1)) ; \
+	done
+	printf "$(B)]\r[$(GRE)"
+endef
+
 # *************************************************************************** #
 #	Rules	#
 
-all:		$(NAME)
+all:		launch $(NAME)
+	@printf "\n$(B)$(MAG)$(NAME) compiled.$(D)\n"
+
+launch:
+	$(call progress_bar)
 
 $(NAME):	$(OBJS) #lib
 	$(AR) $(NAME) $(OBJS)
 	#$(CC) $(CFLAGS) $(OBJS) $(LBNAME) -o $(NAME)
-	@echo "$(B)$(MAG)$(NAME) compiled.$(D)"
 
 $(OBJSPATH)%.o: $(SRCSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
 	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+	@printf "█"
 	
 #$(LBM):
 #	@make -C $(LBPATH)
