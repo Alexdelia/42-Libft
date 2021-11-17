@@ -6,22 +6,23 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/11/16 23:45:27 by adelille         ###   ########.fr        #
+#    Updated: 2021/11/17 10:35:55 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libft.a
-CC = 	clang -Wall -Werror -Wextra
+CC = 	clang
 AR =	ar rcs
 RM = 	rm -rf
 
-FLAGS = ""
-# FLAGS +=	-O2
-# FLAGS +=	-g -fsanitize=address
+CFLAGS =	-Wall -Werror -Wextra
+# CFLAGS +=	-O2
+# CFLAGS +=	-g
+# CFLAGS +=	-fsanitize=address
 
 # **************************************************************************** #
 
-#MAKEFLAGS += --silent
+MAKEFLAGS += --silent
 
 B =		$(shell tput bold)
 BLA =	$(shell tput setaf 0)
@@ -50,7 +51,7 @@ SRCSPATH =	./srcs/
 OBJSPATH =	./objs/
 INC =		./includes/
 
-SRCSNAME =	I-O/ft_ps.c I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c \
+#SRCSNAME =	I-O/ft_ps.c I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c \
 				I-O/ft_putnbr_fd.c I-O/ft_putstr_fd.c I-O/ft_pn.c \
 				str/ft_atoi.c str/ft_atol.c str/ft_atof.c str/ft_itoa.c \
 				str/ft_bzero.c str/ft_split.c str/ft_strchr.c \
@@ -68,10 +69,12 @@ SRCSNAME =	I-O/ft_ps.c I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c \
 				bool_detect/ft_isalnum.c bool_detect/ft_isalpha.c bool_detect/ft_isascii.c \
 				bool_detect/ft_isdigit.c bool_detect/ft_isprint.c
 
-SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
+#SRCS =		$(addprefix $(SRCSPATH), $(SRCSNAME))
+SRCS =		$(wildcard $(SRCSPATH)**/*.c)
+SRCSNAME =	$(subst $(SRCSPATH), , $(SRCS))
 
-OBJSNAME = $(SRCSNAME:.c=.o)
-OBJS = $(addprefix $(OBJSPATH), $(OBJSNAME))
+OBJSNAME =	$(SRCSNAME:.c=.o)
+OBJS =		$(addprefix $(OBJSPATH), $(OBJSNAME))
 
 # *************************************************************************** #
 
@@ -79,12 +82,12 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS) #lib
 	$(AR) $(NAME) $(OBJS)
-	#@$(CC) $(FLAGS) $(OBJS) $(LBNAME) -o $(NAME)
+	#$(CC) $(CFLAGS) $(OBJS) $(LBNAME) -o $(NAME)
 	@echo "$(B)$(MAG)$(NAME) compiled.$(D)"
 
 $(OBJSPATH)%.o: $(SRCSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
-	$(CC) $(FLAGS) -I$(INC) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 	
 #$(LBM):
 #	@make -C $(LBPATH)
