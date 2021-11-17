@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/11/17 12:03:00 by adelille         ###   ########.fr        #
+#    Updated: 2021/11/17 12:04:19 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,7 @@ endef
 #	RULES	#
 
 all:		launch $(NAME)
-	@printf "\n$(B)$(MAG)$(NAME) compiled.$(D)\n"
+	@printf "\n$(B)$(MAG)$(NAME) compiled$(D)\n"
 
 launch:
 	$(call progress_bar)
