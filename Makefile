@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/11/17 10:35:55 by adelille         ###   ########.fr        #
+#    Updated: 2021/11/17 10:53:28 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ CFLAGS =	-Wall -Werror -Wextra
 # CFLAGS +=	-fsanitize=address
 
 # **************************************************************************** #
+#	Makefile related	#
 
 MAKEFLAGS += --silent
 
@@ -46,6 +47,7 @@ CLR =	$(shell tput el 1)
 # LBM =		libm
 
 # **************************************************************************** #
+#	SRCS	#
 
 SRCSPATH =	./srcs/
 OBJSPATH =	./objs/
@@ -77,6 +79,7 @@ OBJSNAME =	$(SRCSNAME:.c=.o)
 OBJS =		$(addprefix $(OBJSPATH), $(OBJSNAME))
 
 # *************************************************************************** #
+#	Rules	#
 
 all:		$(NAME)
 
@@ -106,6 +109,6 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re objs_dir #lib
+.PHONY: all clean fclean re #lib
 
 # **************************************************************************** #
