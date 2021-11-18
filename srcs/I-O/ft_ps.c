@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:09:31 by adelille          #+#    #+#             */
-/*   Updated: 2021/11/18 16:12:52 by adelille         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:17:17 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 int	ft_ps(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return(write(STDOUT, str, i));
+	return(write(STDOUT, str, ft_strlen(str)));
 }
 
 int	ft_psc(char *str, char *color)
@@ -31,12 +26,7 @@ int	ft_psc(char *str, char *color)
 
 int	ft_pser(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (write(STDERR, str, i));
+	return (write(STDERR, str, ft_strlen(str)));
 }
 
 int	ft_pserc(char *str, char *color)
