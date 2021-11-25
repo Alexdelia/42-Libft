@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/11/12 12:29:19 by adelille         ###   ########.fr       */
+/*   Updated: 2021/11/25 19:18:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdbool.h>
+
+# include "color.h"
 
 # define TRUE 1
 # define FALSE 0
@@ -84,16 +86,6 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
-
-# define BWHI	"\033[1;37m"
-# define MAG	"\033[0;35m"
-# define BMAG	"\033[1;35m"
-# define IMAG	"\033[3;35m"
-# define BIMAG	"\033[1;3;35m"
-# define RED	"\033[1;31m"
-# define GRN	"\033[1;32m"
-# define SBLU	"\033[5;3;34m"
-# define DEF	"\033[0m"
 
 int				ft_ps(char *str);
 int				ft_psc(char *str, char *color);
