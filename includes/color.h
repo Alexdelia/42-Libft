@@ -6,12 +6,12 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:01:01 by adelille          #+#    #+#             */
-/*   Updated: 2021/11/25 19:16:51 by adelille         ###   ########.fr       */
+/*   Updated: 2021/11/28 11:51:54 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_HPP
-# define COLOR_HPP
+#ifndef COLOR_H
+# define COLOR_H
 
 # define C_RESET		"\033[0m"
 
