@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/11/25 19:18:26 by adelille         ###   ########.fr       */
+/*   Updated: 2021/11/28 12:02:39 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 
 # include "color.h"
 
-# define TRUE 1
-# define FALSE 0
+/*# define TRUE	1
+# define FALSE	0*/
 
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
+# define STDIN	0
+# define STDOUT	1
+# define STDERR	2
 
 typedef struct s_list
 {
