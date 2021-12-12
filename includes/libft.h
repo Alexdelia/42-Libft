@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/11/28 12:02:39 by adelille         ###   ########.fr       */
+/*   Updated: 2021/12/12 16:55:52 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
 # include <stdbool.h>
+# include <limits.h>
+# include <stdint.h>
 
 # include "color.h"
-
-/*# define TRUE	1
-# define FALSE	0*/
 
 # define STDIN	0
 # define STDOUT	1

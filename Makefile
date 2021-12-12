@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/11/28 11:52:58 by adelille         ###   ########.fr        #
+#    Updated: 2021/12/12 16:59:02 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,6 +126,6 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re #lib
+.PHONY: all clean fclean re launch #lib
 
 # **************************************************************************** #
