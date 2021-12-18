@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 13:07:50 by adelille          #+#    #+#             */
-/*   Updated: 2021/12/18 15:24:30 by adelille         ###   ########.fr       */
+/*   Updated: 2021/12/18 15:55:41 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ bool	ft_pb_oms(const bool w, const char *str, const size_t size)
 	static size_t	index = 0;
 
 	if (size > PB_BUFFER / 4)
-		return (write(1, str, size) * 0 + 1);
+		return (write(1, str, size));
 	if (!buffer)
 	{
 		buffer = (char *)malloc(sizeof(char) * (PB_BUFFER));
@@ -46,7 +46,7 @@ bool	ft_pb_omsa(const bool w, const char *str, const size_t size)
 	static size_t	index = 0;
 
 	if (size >= 1600)
-		return (write(1, str, size) * 0 + 1);
+		return (write(1, str, size));
 	if (!buffer)
 	{
 		buffer = (char *)malloc(sizeof(char) * (PB_BUFFER));
