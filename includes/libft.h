@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/12/18 12:59:02 by adelille         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:18:37 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 # define STDIN	0
 # define STDOUT	1
 # define STDERR	2
+
+# ifndef PB_BUFFER
+#  define PB_BUFFER	40000
+# endif
 
 typedef struct s_list
 {
@@ -92,6 +96,12 @@ int				ft_pserc(char *str, char *color);
 int				ft_pn(int nbr);
 int				ft_pnc(int nbr, char *color);
 int				ft_pnerc(int nbr, char *color);
+
+void			ft_pb(const bool w, const char *str);
+void			ft_pb_s(const bool w, const char *str, const size_t size);
+size_t			ft_pb_f(const bool w, const char *str);
+bool			ft_pb_oms(const bool w, const char *str, const size_t size);
+bool			ft_pb_omsa(const bool w, const char *str, const size_t size);
 
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strcpy(char *dst, const char *src);
