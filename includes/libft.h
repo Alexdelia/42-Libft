@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/12/18 13:18:37 by adelille         ###   ########.fr       */
+/*   Updated: 2021/12/18 15:25:08 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ bool			ft_pb_omsa(const bool w, const char *str, const size_t size);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcpy(char *dst, const char *src, const size_t size);
+size_t			ft_strocpy(char *dst, const char *src, const size_t size);
 char			*ft_strjoin_free(char *s1, char *s2,
 					bool const f1, bool const f2);
 

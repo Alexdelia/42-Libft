@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 13:07:50 by adelille          #+#    #+#             */
-/*   Updated: 2021/12/18 13:16:36 by adelille         ###   ########.fr       */
+/*   Updated: 2021/12/18 15:24:30 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ bool	ft_pb_oms(const bool w, const char *str, const size_t size)
 			return (true);
 		}
 	}
-	index += ft_strlcpy(&buffer[index], str, size);
+	index += ft_strocpy(&buffer[index], str, size);
 	return (true);
 }
 
@@ -64,6 +64,6 @@ bool	ft_pb_omsa(const bool w, const char *str, const size_t size)
 			return (true);
 		}
 	}
-	index += ft_strlcpy(&buffer[index], str, size);
+	index += ft_strocpy(&buffer[index], str, size);
 	return (true);
 }
