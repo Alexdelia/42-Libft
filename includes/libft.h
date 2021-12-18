@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/12/12 16:55:52 by adelille         ###   ########.fr       */
+/*   Updated: 2021/12/18 12:59:02 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,14 @@ int				ft_pserc(char *str, char *color);
 int				ft_pn(int nbr);
 int				ft_pnc(int nbr, char *color);
 int				ft_pnerc(int nbr, char *color);
+
 int				ft_strcmp(const char *s1, const char *s2);
-int				ft_nbrlen(int nb);
 int				ft_strcpy(char *dst, const char *src);
+size_t			ft_strlcpy(char *dst, const char *src, const size_t size);
+char			*ft_strjoin_free(char *s1, char *s2,
+					bool const f1, bool const f2);
+
+int				ft_nbrlen(int nb);
 int				ft_abs(int n);
 bool			ft_is_prime(int n);
 bool			ft_is_prime_ul(unsigned long n);
@@ -102,7 +107,5 @@ int				ft_next_prime(int n);
 int				ft_prev_prime(int n);
 unsigned long	ft_next_prime_ul(unsigned long n);
 unsigned long	ft_prev_prime_ul(unsigned long n);
-char			*ft_strjoin_free(char *s1, char *s2,
-					bool const f1, bool const f2);
 
 #endif
