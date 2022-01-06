@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 15:04:32 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/06 18:35:03 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/06 18:39:35 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ ssize_t	ft_pnc(int nbr, char *color)
 ssize_t	ft_pnerc(int nbr, char *color)
 {
 	ssize_t	size;
+
 	size = write(STDERR, color, ft_strlen(color));
 	ft_putnbr_fd(nbr, STDERR);
 	size += ft_nbrlen(nbr);
