@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/12/18 15:25:08 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/06 18:36:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,13 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
-int				ft_ps(char *str);
-int				ft_psc(char *str, char *color);
-int				ft_pser(char *str);
-int				ft_pserc(char *str, char *color);
-int				ft_pn(int nbr);
-int				ft_pnc(int nbr, char *color);
-int				ft_pnerc(int nbr, char *color);
+ssize_t			ft_ps(char *str);
+ssize_t			ft_psc(char *str, char *color);
+ssize_t			ft_pser(char *str);
+ssize_t			ft_pserc(char *str, char *color);
+ssize_t			ft_pn(int nbr);
+ssize_t			ft_pnc(int nbr, char *color);
+ssize_t			ft_pnerc(int nbr, char *color);
 
 void			ft_pb(const bool w, const char *str);
 void			ft_pb_s(const bool w, const char *str, const size_t size);
