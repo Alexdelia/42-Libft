@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../inc/libft.h"
 
 void	ft_pb(const bool w, const char *str)
 {

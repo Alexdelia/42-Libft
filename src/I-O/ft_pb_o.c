@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../inc/libft.h"
 
 bool	ft_pb_oms(const bool w, const char *str, const size_t size)
 {

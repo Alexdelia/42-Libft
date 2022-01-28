@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 static void	*ft_memmove_end(char *dest, const char *src, size_t n)
 {

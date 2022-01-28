@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../inc/libft.h"
 
 size_t	ft_strocpy(char *dst, const char *src, const size_t size)
 {
