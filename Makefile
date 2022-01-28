@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/12/12 16:59:02 by adelille         ###   ########.fr        #
+#    Updated: 2022/01/28 16:26:15 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,9 +51,9 @@ CLR =	$(shell tput el 1)
 # **************************************************************************** #
 #	SRCS	#
 
-SRCSPATH =	./srcs/
-OBJSPATH =	./objs/
-INC =		./includes/
+SRCSPATH =	./src/
+OBJSPATH =	./obj/
+INC =		./inc/
 
 #SRCSNAME =	I-O/ft_ps.c I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c \
 				I-O/ft_putnbr_fd.c I-O/ft_putstr_fd.c I-O/ft_pn.c \
