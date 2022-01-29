@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 15:04:32 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/06 18:39:35 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 13:04:54 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 ssize_t	ft_pn(int nbr)
 {
 	ft_putnbr_fd(nbr, STDOUT);
+	return (ft_nbrlen(nbr));
+}
+
+ssize_t	ft_pner(int nbr)
+{
+	ft_putnbr_fd(nbr, STDERR);
 	return (ft_nbrlen(nbr));
 }
 
