@@ -6,20 +6,21 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/06 18:36:09 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 12:21:37 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "color.h"
+# include "gfd.h"
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>
 # include <limits.h>
 # include <stdint.h>
-
-# include "color.h"
 
 # define STDIN	0
 # define STDOUT	1

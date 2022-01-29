@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 17:54:03 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/29 11:41:09 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 12:37:31 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_gfdc	*gfd_new(void)
 	new = (t_gfdc *)malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
-	new->p = NULL;
+	new->part = NULL;
 	new->next = NULL;
 	return (new);
 }
@@ -60,7 +60,7 @@ bool	gfd_clear(t_gfdc **gfdc)
 	while (*gfdc)
 	{
 		tmp = (*gfdc)->next;
-		free((*gfdc)->p);
+		free((*gfdc)->part);
 		free(*gfdc);
 		*gfdc = tmp;
 	}

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:47:25 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/29 11:57:04 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 12:59:04 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,24 @@ bool	gfd(t_gfd *gfd, const int fd)
 	ssize_t	res;
 	t_gfdc	*current;
 
+	gfd->n_part = 0;
 	gfd->data = gfd_new();
 	current = gfd->data;
 	res = 1;
 	while (res > 0)
 	{
-		current->p = (char *)malloc(sizeof(char) * FLD_BUFFER);
-		if (!current->p)
+		current->part = (char *)malloc(sizeof(char) * GFD_BUFFER + 1);
+		if (!current->part)
 			return (gfd_error(gfd, fd));
-		res = read(fd, current->p, FLD_BUFFER);
+		res = read(fd, current->part, GFD_BUFFER);
 		if (res < 0)
 			return (gfd_error(gfd, fd));
-		current->p[res] = '\0';
-		if (!gfd_addback(&gfd->data, gfd_new()))
+		current->part[res] = '\0';
+		current->next = gfd_new();
+		if (!current->next)
 			return (gfd_error(gfd, fd));
 		current = current->next;
-		gfd->n_line++;
+		gfd->n_part++;
 	}
 	if (fd != 0)
 		close(fd);

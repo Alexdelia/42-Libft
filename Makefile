@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2022/01/29 11:56:46 by adelille         ###   ########.fr        #
+#    Updated: 2022/01/29 12:48:03 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ AR =	ar rcs
 RM = 	rm -rf
 
 CFLAGS =	-Wall -Werror -Wextra
-# CFLAGS +=	-O2
-# CFLAGS +=	-g
-# CFLAGS +=	-fsanitize=address
-# CFLAGS +=	-Wsuggest-attribute=const
-# CFLAGS +=	-Wattribute-alias=2
+#CFLAGS +=	-O2
+CFLAGS +=	-g3
+#CFLAGS +=	-fsanitize=address
+#CFLAGS +=	-Wsuggest-attribute=const
+#CFLAGS +=	-Wattribute-alias=2
 
 # **************************************************************************** #
 #	MAKEFILE	#
