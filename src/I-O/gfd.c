@@ -6,20 +6,20 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:47:25 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/29 11:40:58 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 11:57:04 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/gfd.h"
 
-static bool	gfd_error(t_gfd *gfd, int fd)
+static bool	gfd_error(t_gfd *gfd, const int fd)
 {
 	if (fd != 0)
 		close(fd);
 	return (gfd_clear(&(gfd->data)));
 }
 
-bool	gfd(t_gfd *gfd, int fd)
+bool	gfd(t_gfd *gfd, const int fd)
 {
 	ssize_t	res;
 	t_gfdc	*current;

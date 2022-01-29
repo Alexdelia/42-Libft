@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:28:22 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/29 11:40:42 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 11:57:13 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_file_data
 	size_t	n_line;
 }			t_gfd;
 
-bool	gfd(t_gfd *gfd, int fd);
+bool	gfd(t_gfd *gfd, const int fd);
 t_gfdc	*gfd_new(void);
 bool	gfd_addback(t_gfdc **alst, t_gfdc *new);
 t_gfdc	*gfd_last(t_gfdc *gfdc);
