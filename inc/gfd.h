@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fld.h                                              :+:      :+:    :+:   */
+/*   gfd.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:28:22 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/28 19:15:22 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 11:40:42 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ typedef struct s_file_data_chain
 {
 	char						*p;
 	struct s_file_data_chain	*next;
-}								t_fldc;
+}								t_gfdc;
 
 typedef struct s_file_data
 {
-	t_fldc	*data;
+	t_gfdc	*data;
 	size_t	n_line;
-}			t_fld;
+}			t_gfd;
 
-bool	fld(t_fld *fld, int fd);
-t_fldc	*fld_new(void);
-bool	fld_addback(t_fldc **alst, t_fldc *new);
-t_fldc	*fld_last(t_fldc *fldc);
-bool	fld_clear(t_fldc **fldc);
+bool	gfd(t_gfd *gfd, int fd);
+t_gfdc	*gfd_new(void);
+bool	gfd_addback(t_gfdc **alst, t_gfdc *new);
+t_gfdc	*gfd_last(t_gfdc *gfdc);
+bool	gfd_clear(t_gfdc **gfdc);
 
 #endif

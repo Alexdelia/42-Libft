@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fld_list.c                                         :+:      :+:    :+:   */
+/*   gfd_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 17:54:03 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/28 19:15:02 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 11:41:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fld.h"
+#include "../../inc/gfd.h"
 
-t_fldc	*fld_new(void)
+t_gfdc	*gfd_new(void)
 {
-	t_fldc	*new;
+	t_gfdc	*new;
 
-	new = (t_fldc *)malloc(sizeof(*new));
+	new = (t_gfdc *)malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
 	new->p = NULL;
@@ -24,15 +24,15 @@ t_fldc	*fld_new(void)
 	return (new);
 }
 
-bool	fld_addback(t_fldc **alst, t_fldc *new)
+bool	gfd_addback(t_gfdc **alst, t_gfdc *new)
 {
-	t_fldc	*last;
+	t_gfdc	*last;
 
 	if (!new || !alst)
 		return (false);
 	if (*alst)
 	{
-		last = fld_last(*alst);
+		last = gfd_last(*alst);
 		last->next = new;
 	}
 	else
@@ -40,29 +40,29 @@ bool	fld_addback(t_fldc **alst, t_fldc *new)
 	return (true);
 }
 
-t_fldc	*fld_last(t_fldc *fldc)
+t_gfdc	*gfd_last(t_gfdc *gfdc)
 {
-	while (fldc)
+	while (gfdc)
 	{
-		if (!fldc->next)
-			return (fldc);
-		fldc = fldc->next;
+		if (!gfdc->next)
+			return (gfdc);
+		gfdc = gfdc->next;
 	}
-	return (fldc);
+	return (gfdc);
 }
 
-bool	fld_clear(t_fldc **fldc)
+bool	gfd_clear(t_gfdc **gfdc)
 {
-	t_fldc	*tmp;
+	t_gfdc	*tmp;
 
-	if (!fldc || !*fldc)
+	if (!gfdc || !*gfdc)
 		return (false);
-	while (*fldc)
+	while (*gfdc)
 	{
-		tmp = (*fldc)->next;
-		free((*fldc)->p);
-		free(*fldc);
-		*fldc = tmp;
+		tmp = (*gfdc)->next;
+		free((*gfdc)->p);
+		free(*gfdc);
+		*gfdc = tmp;
 	}
 	return (false);
 }

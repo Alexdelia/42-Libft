@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fld.c                                              :+:      :+:    :+:   */
+/*   gfd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:47:25 by adelille          #+#    #+#             */
-/*   Updated: 2022/01/28 19:13:37 by adelille         ###   ########.fr       */
+/*   Updated: 2022/01/29 11:40:58 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fld.h"
+#include "../../inc/gfd.h"
 
-static bool	fld_error(t_fld *fld, int fd)
+static bool	gfd_error(t_gfd *gfd, int fd)
 {
 	if (fd != 0)
 		close(fd);
-	return (fld_clear(&(fld->data)));
+	return (gfd_clear(&(gfd->data)));
 }
 
-bool	fld(t_fld *fld, int fd)
+bool	gfd(t_gfd *gfd, int fd)
 {
 	ssize_t	res;
-	t_fldc	*current;
+	t_gfdc	*current;
 
-	fld->data = fld_new();
-	current = fld->data;
+	gfd->data = gfd_new();
+	current = gfd->data;
 	res = 1;
 	while (res > 0)
 	{
 		current->p = (char *)malloc(sizeof(char) * FLD_BUFFER);
 		if (!current->p)
-			return (fld_error(fld, fd));
+			return (gfd_error(gfd, fd));
 		res = read(fd, current->p, FLD_BUFFER);
 		if (res < 0)
-			return (fld_error(fld, fd));
+			return (gfd_error(gfd, fd));
 		current->p[res] = '\0';
-		if (!fld_addback(&fld->data, fld_new()))
-			return (fld_error(fld, fd));
+		if (!gfd_addback(&gfd->data, gfd_new()))
+			return (gfd_error(gfd, fd));
 		current = current->next;
-		fld->n_line++;
+		gfd->n_line++;
 	}
 	if (fd != 0)
 		close(fd);
