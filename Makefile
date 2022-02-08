@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2022/01/29 12:48:03 by adelille         ###   ########.fr        #
+#    Updated: 2022/02/08 23:23:05 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,7 @@ define	progress_bar
 		printf " " ; \
 		((i = i + 1)) ; \
 	done
-	@printf "$(B)]\r[$(GRE)"
+	@printf "$(B)]\r[$(D)"
 endef
 
 # *************************************************************************** #
@@ -109,7 +109,7 @@ $(NAME):	$(OBJS) #lib
 $(OBJSPATH)%.o: $(SRCSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
 	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-	@printf "█"
+	@printf "$(B)$(GRE)█$(D)"
 	
 #$(LBM):
 #	@make -C $(LBPATH)
