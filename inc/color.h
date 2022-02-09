@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:01:01 by adelille          #+#    #+#             */
-/*   Updated: 2021/11/28 11:51:54 by adelille         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:13:19 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@
 # define C_CYAN		"\033[36m"
 # define C_WHITE	"\033[37m"
 # define C_GRAY		"\033[90m"
+
+# define C_BACK_BLACK	"\033[40m"
+# define C_BACK_RED		"\033[41m"
+# define C_BACK_GREEN	"\033[42m"
+# define C_BACK_YELLOW	"\033[43m"
+# define C_BACK_BLUE	"\033[44m"
+# define C_BACK_MAGENTA	"\033[45m"
+# define C_BACK_CYAN	"\033[46m"
+# define C_BACK_WHITE	"\033[47m"
 
 # define BWHI	"\033[1;37m"
 # define MAG	"\033[0;35m"
