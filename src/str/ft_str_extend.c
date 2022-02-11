@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 16:13:07 by adelille          #+#    #+#             */
-/*   Updated: 2022/02/11 19:16:59 by adelille         ###   ########.fr       */
+/*   Updated: 2022/02/11 19:32:11 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char	*ft_str_extend(char *str, const size_t size, const size_t capacity)
 	if (!output)
 		return (NULL);
 	ft_strocpy(output, str, size);
+	free(str);
 	return (output);
 }
