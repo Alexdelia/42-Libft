@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:50:56 by adelille          #+#    #+#             */
-/*   Updated: 2022/02/11 16:21:57 by adelille         ###   ########.fr       */
+/*   Updated: 2022/02/11 19:22:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,19 @@ static char	*gal_big(const int fd, char *output, size_t *size)
 {
 	ssize_t	res;
 	size_t	capacity;
-	size_t	mult;
 
-	mult = 1;
+	capacity = GAL_BUFFER;
+	res = 1;
 	while (res > 0)
 	{
-		output = ft_str_extend(output, *size, capacity);
-		res = read(fd, &output[*size], capacity); // capacity is not right
+		output = ft_str_extend(output, *size, *size + capacity);
+		res = read(fd, &output[*size], capacity);
 		if (res < 0)
 			return (gal_error(fd, output));
 		if (res == 0)
 			break ;
 		output[res] = '\0';
 		*size += res;
-		++mult;
 		capacity *= 2;
 	}
 	if (fd != 0)
