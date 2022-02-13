@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:01:01 by adelille          #+#    #+#             */
-/*   Updated: 2022/02/09 17:13:19 by adelille         ###   ########.fr       */
+/*   Updated: 2022/02/13 13:28:46 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define COLOR_H
 
 # define C_RESET		"\033[0m"
+
+# define C_CLEAR		"\033[1;1H\033[2J"
 
 # define C_BOLD			"\033[1m"
 # define C_DIM			"\033[2m"
