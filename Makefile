@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2022/02/11 19:46:02 by adelille         ###   ########.fr        #
+#    Updated: 2022/03/20 16:47:36 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,6 @@ CLR =	$(shell tput el 1)
 # LBPATH =	./libft/
 # LBNAME =	$(LBPATH)libft.a
 # LBINC =		-I$(LBPATH)
-# LBM =		libm
 
 # **************************************************************************** #
 #	SRCS	#
@@ -102,7 +101,7 @@ all:		launch $(NAME)
 launch:
 	$(call progress_bar)
 
-$(NAME):	$(OBJS) #lib
+$(NAME):	$(OBJS) #$(LIBNAME)
 	$(AR) $(NAME) $(OBJS)
 	#$(CC) $(CFLAGS) $(OBJS) $(LBNAME) -o $(NAME)
 
@@ -111,10 +110,8 @@ $(OBJSPATH)%.o: $(SRCSPATH)%.c
 	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 	@printf "$(B)$(GRE)█$(D)"
 	
-#$(LBM):
+#$(LIBNAME):
 #	@make -C $(LBPATH)
-
-#lib:		$(LIBFTM)
 #	@echo "$(B)$(MAG)$(BEL)Libft compiled.$(D)"
 
 clean:
@@ -128,6 +125,6 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re launch #lib
+.PHONY: all clean fclean re launch
 
 # **************************************************************************** #
