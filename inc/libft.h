@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2022/02/12 19:22:56 by adelille         ###   ########.fr       */
+/*   Updated: 2022/04/20 19:02:41 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,9 @@ ssize_t			ft_pn(int nbr);
 ssize_t			ft_pner(int nbr);
 ssize_t			ft_pnc(int nbr, const char *color);
 ssize_t			ft_pnerc(int nbr, const char *color);
+
+ssize_t			ft_prgb(const int r, const int g, const int b);
+ssize_t			ft_prgb_b(const int r, const int g, const int b);
 
 void			ft_pb(const bool w, const char *str);
 void			ft_pb_s(const bool w, const char *str, const size_t size);
