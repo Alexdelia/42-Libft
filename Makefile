@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2023/11/19 13:47:43 by adelille         ###   ########.fr        #
+#    Updated: 2023/11/19 13:50:46 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,7 +113,7 @@ all:		launch $(NAME)
     fi
 
 launch:
-	$(call progress_bar)
+	@$(call progress_bar)
 
 $(NAME):	$(OBJ) #$(LIB_NAME)
 	$(AR) $(NAME) $(OBJ)
