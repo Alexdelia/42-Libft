@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 14:57:20 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:22:45 by adelille         ###   ########.fr       */
+/*   Created: 2020/10/22 16:17:07 by adelille          #+#    #+#             */
+/*   Updated: 2023/11/19 14:30:23 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_isascii(int c)
+int	ft_tolower(int c)
 {
-	return (c >= 0 && c <= 127);
+	if (ft_isupper(c))
+		return (c + 32);
+	return (c);
 }

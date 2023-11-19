@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 14:59:08 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:18 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:21:43 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+bool	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }

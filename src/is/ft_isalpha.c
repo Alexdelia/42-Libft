@@ -6,14 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 14:49:43 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:18 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:25:34 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+inline bool	ft_isalpha(int c)
 {
-	return ((c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z'));
+	return (ft_isupper(c) || ft_islower(c));
 }

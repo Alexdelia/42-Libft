@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 15:02:55 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:21 by adelille         ###   ########.fr       */
+/*   Created: 2023/11/19 14:33:41 by adelille          #+#    #+#             */
+/*   Updated: 2023/11/19 14:44:43 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+bool	ft_isin(const char *s, char c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	while (*s)
+	{
+		if (*s == c)
+			return (true);
+		s++;
+	}
+	return (false);
 }
