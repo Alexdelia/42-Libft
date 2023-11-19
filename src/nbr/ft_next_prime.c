@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:10:35 by adelille          #+#    #+#             */
-/*   Updated: 2021/11/04 14:05:51 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:19:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 int	ft_next_prime(int n)
 {

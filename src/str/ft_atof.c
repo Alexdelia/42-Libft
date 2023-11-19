@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:05:43 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 14:27:09 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:19:20 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 double	ft_atof(const char *str)
 {

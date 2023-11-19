@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 13:07:50 by adelille          #+#    #+#             */
-/*   Updated: 2021/12/18 15:55:41 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:19:19 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 bool	ft_pb_oms(const bool w, const char *str, const size_t size)
 {

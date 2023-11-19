@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ocpy.c                                          :+:      :+:    :+:   */
+/*   ft_strocpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 12:56:24 by adelille          #+#    #+#             */
-/*   Updated: 2021/12/18 12:56:43 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:19:20 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 size_t	ft_strocpy(char *dst, const char *src, const size_t size)
 {

@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:50:56 by adelille          #+#    #+#             */
-/*   Updated: 2022/02/12 19:26:31 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:19:19 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 static char	*gal_error(const int fd, char *output)
 {

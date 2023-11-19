@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 14:52:49 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/22 14:53:34 by adelille         ###   ########.fr       */
+/*   Created: 2020/10/22 14:49:43 by adelille          #+#    #+#             */
+/*   Updated: 2023/11/19 14:19:18 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isalpha(int c)
 {
-	return (c >= '0' && c <= '9');
+	return ((c >= 'A' && c <= 'Z')
+		|| (c >= 'a' && c <= 'z'));
 }

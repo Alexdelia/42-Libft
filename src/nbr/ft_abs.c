@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:40:53 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 19:41:27 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:19:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 int	ft_abs(int n)
 {
