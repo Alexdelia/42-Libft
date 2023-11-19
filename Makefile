@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2023/11/19 13:13:09 by adelille         ###   ########.fr        #
+#    Updated: 2023/11/19 13:47:43 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ MAKEFLAGS += --silent
 SHELL := bash
 
 B =			$(shell tput bold)
+I =			$(shell tput sitm)
 
 BLA =		$(shell tput setaf 0)
 RED =		$(shell tput setaf 1)
@@ -94,6 +95,8 @@ define	progress_bar
 	@printf "$(D)$(PROGRESS_END)$(D)\r$(PROGRESS_START)$(D)"
 endef
 
+name = 0
+
 # *************************************************************************** #
 #	RULES	#
 
@@ -103,7 +106,11 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@printf "$(D)$(PROGRESS_FILL)$(D)"
 
 all:		launch $(NAME)
-	@printf "\n$(B)$(PRIMARY)$(NAME) compiled$(D)\n"
+	@if [ $(name) -ne 0 ]; then \
+        printf "\n$(B)$(PRIMARY)─╴$(NAME) compiled$(D)\n"; \
+    else \
+        printf "\n$(B)$(PRIMARY)─╴$(D)$(B)$(I)nothing to do$(D)\n"; \
+    fi
 
 launch:
 	$(call progress_bar)
@@ -111,6 +118,7 @@ launch:
 $(NAME):	$(OBJ) #$(LIB_NAME)
 	$(AR) $(NAME) $(OBJ)
 #	$(CC) $(CFLAGS) $(OBJ) $(LIB_NAME) -o $(NAME)
+	@$(eval name=1)
 	
 # $(LIB_NAME):
 # 	@make -C $(LIB_PATH)
