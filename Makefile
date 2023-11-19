@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2022/03/20 16:47:36 by adelille         ###   ########.fr        #
+#    Updated: 2023/11/19 13:13:09 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,16 @@ AR =	ar rcs
 RM = 	rm -rf
 
 CFLAGS =	-Wall -Werror -Wextra
-#CFLAGS +=	-O2
-#CFLAGS +=	-g3
-#CFLAGS +=	-fsanitize=address
-#CFLAGS +=	-Wsuggest-attribute=const
-#CFLAGS +=	-Wattribute-alias=2
+
+# CFLAGS +=	-g3
+# CFLAGS +=	-fsanitize=address
+
+# CFLAGS +=	-Wsuggest-attribute=const
+# CFLAGS +=	-Wattribute-alias=2
+
+# CFLAGS +=	-O2
+
+LKFLAGS =	-MMD -MP
 
 # **************************************************************************** #
 #	MAKEFILE	#
@@ -29,101 +34,100 @@ MAKEFLAGS += --silent
 
 SHELL := bash
 
-B =		$(shell tput bold)
-BLA =	$(shell tput setaf 0)
-RED =	$(shell tput setaf 1)
-GRE =	$(shell tput setaf 2)
-YEL =	$(shell tput setaf 3)
-BLU =	$(shell tput setaf 4)
-MAG =	$(shell tput setaf 5)
-CYA =	$(shell tput setaf 6)
-WHI =	$(shell tput setaf 7)
-D =		$(shell tput sgr0)
-BEL =	$(shell tput bel)
-CLR =	$(shell tput el 1)
+B =			$(shell tput bold)
+
+BLA =		$(shell tput setaf 0)
+RED =		$(shell tput setaf 1)
+GRE =		$(shell tput setaf 2)
+YEL =		$(shell tput setaf 3)
+BLU =		$(shell tput setaf 4)
+MAG =		$(shell tput setaf 5)
+CYA =		$(shell tput setaf 6)
+WHI =		$(shell tput setaf 7)
+
+D =			$(shell tput sgr0)
+CLR =		$(shell tput el 1)
+
+BEL =		$(shell tput bel)
+
+PRIMARY =	$(shell tput setaf 13)
+SECONDARY =	$(GRE)
+
+PROGRESS_START =	$(PRIMARY)▐
+PROGRESS_END =		$(PRIMARY)▌
+# PROGRESS_EMPTY = 	-
+PROGRESS_FILL =		$(SECONDARY)█
 
 # **************************************************************************** #
-#	 LIB	#
+#	LIBRARY	#
 
-# LBPATH =	./libft/
-# LBNAME =	$(LBPATH)libft.a
-# LBINC =		-I$(LBPATH)
+# LIB_PATH =	./libft/
+# LIB_NAME =	$(LIB_PATH)libft.a
+# LIB_INC =		-I$(LIB_PATH)inc/
 
 # **************************************************************************** #
-#	SRCS	#
+#	SOURCE	#
 
-SRCSPATH =	./src/
-OBJSPATH =	./obj/
-INC =		./inc/
+SRC_PATH =	./src/
+OBJ_PATH =	./obj/
+INC =		-I./inc/ #$(LIB_INC)
 
-#SRCSNAME =	I-O/ft_ps.c I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c \
-				I-O/ft_putnbr_fd.c I-O/ft_putstr_fd.c I-O/ft_pn.c \
-				str/ft_atoi.c str/ft_atol.c str/ft_atof.c str/ft_itoa.c \
-				str/ft_bzero.c str/ft_split.c str/ft_strchr.c \
-				str/ft_strcmp.c str/ft_strdup.c str/ft_strjoin.c str/ft_strlcat.c \
-				str/ft_strlcpy.c str/ft_strcpy.c \
-				str/ft_strlen.c str/ft_strmapi.c str/ft_strncmp.c \
-				str/ft_strnstr.c str/ft_strrchr.c str/ft_strtrim.c str/ft_substr.c \
-				str/ft_tolower.c str/ft_toupper.c \
-				nbr/ft_nbrlen.c nbr/ft_abs.c \
-				nbr/ft_is_prime.c nbr/ft_next_prime.c nbr/ft_prev_prime.c \
-				mem/ft_calloc.c mem/ft_memccpy.c mem/ft_memchr.c mem/ft_memcmp.c \
-				mem/ft_memcpy.c mem/ft_memmove.c mem/ft_memset.c \
-				lst/ft_lstadd_back.c lst/ft_lstadd_front.c lst/ft_lstclear.c lst/ft_lstdelone.c \
-				lst/ft_lstiter.c lst/ft_lstlast.c lst/ft_lstmap.c lst/ft_lstnew.c lst/ft_lstsize.c \
-				bool_detect/ft_isalnum.c bool_detect/ft_isalpha.c bool_detect/ft_isascii.c \
-				bool_detect/ft_isdigit.c bool_detect/ft_isprint.c
+# SRC_NAME = ...
 
-#SRCS =		$(addprefix $(SRCSPATH), $(SRCSNAME))
-SRCS =		$(wildcard $(SRCSPATH)*.c) $(wildcard $(SRCSPATH)**/*.c)
-SRCSNAME =	$(subst $(SRCSPATH), , $(SRCS))
+# SRC =		$(addprefix $(SRC_PATH), $(SRC_NAME))
+SRC =		$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
+SRC_NAME =	$(subst $(SRC_PATH), , $(SRC))
 
-OBJSNAME =	$(SRCSNAME:.c=.o)
-OBJS =		$(addprefix $(OBJSPATH), $(OBJSNAME))
+OBJ_NAME =	$(SRC_NAME:.c=.o)
+OBJ =		$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
 # *************************************************************************** #
+#	BASH	#
 
 define	progress_bar
+	@printf "$(PROGRESS_START)$(D)"
 	@i=0
-	@while [[ $$i -le $(words $(SRCS)) ]] ; do \
+	@while [[ $$i -lt $(words $(SRC)) ]] ; do \
 		printf " " ; \
 		((i = i + 1)) ; \
 	done
-	@printf "$(B)]\r[$(D)"
+	@printf "$(D)$(PROGRESS_END)$(D)\r$(PROGRESS_START)$(D)"
 endef
 
 # *************************************************************************** #
 #	RULES	#
 
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(LKFLAGS) $(INC) -c $< -o $@
+	@printf "$(D)$(PROGRESS_FILL)$(D)"
+
 all:		launch $(NAME)
-	@printf "\n$(B)$(MAG)$(NAME) compiled$(D)\n"
+	@printf "\n$(B)$(PRIMARY)$(NAME) compiled$(D)\n"
 
 launch:
 	$(call progress_bar)
 
-$(NAME):	$(OBJS) #$(LIBNAME)
-	$(AR) $(NAME) $(OBJS)
-	#$(CC) $(CFLAGS) $(OBJS) $(LBNAME) -o $(NAME)
-
-$(OBJSPATH)%.o: $(SRCSPATH)%.c
-	@mkdir -p $(dir $@) # 2> /dev/null || true
-	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-	@printf "$(B)$(GRE)█$(D)"
+$(NAME):	$(OBJ) #$(LIB_NAME)
+	$(AR) $(NAME) $(OBJ)
+#	$(CC) $(CFLAGS) $(OBJ) $(LIB_NAME) -o $(NAME)
 	
-#$(LIBNAME):
-#	@make -C $(LBPATH)
-#	@echo "$(B)$(MAG)$(BEL)Libft compiled.$(D)"
+# $(LIB_NAME):
+# 	@make -C $(LIB_PATH)
+# 	@printf "$(B)$(PRIMARY)$(LIB_NAME) compiled$(D)\n"
 
 clean:
-	@$(RM) $(OBJSPATH)
-# @make clean -C $(LBPATH)
+	@$(RM) $(OBJ_PATH)
+#	@make clean -C $(LIB_PATH)
 
 fclean:		clean
-	@$(RM) $(OBJSPATH)
+	@$(RM) $(OBJ_PATH)
 	@$(RM) $(NAME)
-# @make fclean -C $(LBPATH)
+#	@make fclean -C $(LIB_PATH)
 
 re:			fclean all
+
+-include $(OBJS:.o=.d)
 
 .PHONY: all clean fclean re launch
 
