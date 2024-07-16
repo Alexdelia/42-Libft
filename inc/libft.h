@@ -147,7 +147,6 @@ char			*ft_str_extend(char *str, const size_t size,
 					const size_t capacity);
 
 int				ft_nbrlen(int nb);
-int				ft_abs(int n);
 bool			ft_is_prime(int n);
 bool			ft_is_prime_ul(unsigned long n);
 int				ft_next_prime(int n);
