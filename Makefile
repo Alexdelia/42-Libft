@@ -129,7 +129,6 @@ clean:
 #	@make clean -C $(LIB_PATH)
 
 fclean:		clean
-	@$(RM) $(OBJ_PATH)
 	@$(RM) $(NAME)
 #	@make fclean -C $(LIB_PATH)
 
