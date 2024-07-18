@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:02:43 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:19 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:09:30 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 static void	*ft_memmove_end(char *dest, const char *src, size_t n)
 {
-	int	i;
+	ssize_t	i;
 
 	if (dest > src)
 	{
-		i = (int)n - 1;
+		i = (ssize_t)n - 1;
 		while (i >= 0)
 		{
 			*(dest + i) = *(src + i);
@@ -28,7 +28,7 @@ static void	*ft_memmove_end(char *dest, const char *src, size_t n)
 	else
 	{
 		i = 0;
-		while (i < (int)n)
+		while (i < (ssize_t)n)
 		{
 			*(dest + i) = *(src + i);
 			i++;

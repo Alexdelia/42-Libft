@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:06:50 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:13:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,9 @@ size_t			ft_strlen(const char *str);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 
+int				ft_strcmp(const char *s1, const char *s2);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
+
 /* mem */
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
@@ -86,8 +89,6 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 
 /* lst */
-
-int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
@@ -137,7 +138,6 @@ size_t			ft_pb_f(const bool w, const char *str);
 bool			ft_pb_oms(const bool w, const char *str, const size_t size);
 bool			ft_pb_omsa(const bool w, const char *str, const size_t size);
 
-int				ft_strcmp(const char *s1, const char *s2);
 size_t			ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcpy(char *dst, const char *src, const size_t size);
 size_t			ft_strocpy(char *dst, const char *src, const size_t size);

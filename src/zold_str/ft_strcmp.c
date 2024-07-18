@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 21:09:30 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:20 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:13:05 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s1[i] && s2[i])

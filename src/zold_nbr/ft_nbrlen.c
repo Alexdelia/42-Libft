@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:39:24 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:21 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:09:41 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_nbrlen(int nb)
 {
 	unsigned int	n;
-	int				i;
+	ssize_t			i;
 
 	if (nb == 0)
 		return (1);
