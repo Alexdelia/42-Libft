@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:41:44 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:46:42 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ int				ft_tolower(int c);
 
 /* nbr */
 size_t			ft_abs(ssize_t n);
+
+size_t			ft_nbrlen(ssize_t n);
+size_t			ft_unbrlen(size_t n);
 
 /* str */
 size_t			ft_strlen(const char *str);
@@ -156,8 +159,6 @@ bool			ft_pb_omsa(const bool w, const char *str, const size_t size);
 
 char			*ft_str_extend(char *str, const size_t size,
 					const size_t capacity);
-
-int				ft_nbrlen(int nb);
 
 char			*gal(const int fd, size_t *size, const bool all);
 
