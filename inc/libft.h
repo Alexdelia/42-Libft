@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:34:28 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:39:13 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ size_t			ft_abs(ssize_t n);
 /* str */
 size_t			ft_strlen(const char *str);
 
+/* # search */
 char			*ft_strchr(const char *s, int c);
 // char			*ft_strnchr(const char *s, int c, size_t n);
 char			*ft_strrchr(const char *s, int c);
@@ -75,15 +76,24 @@ char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *s, const char *match, size_t len);
 // char			*ft_strrstr(const char *s, const char *match);
 
+/* # cmp */
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
+/* # cpy */
 size_t			ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strocpy(char *dst, const char *src, size_t size);
 
+char			*ft_strdup(const char *s);
+// char			*ft_strndup(const char *s, size_t n);
+
+/* # cat */
 // size_t			ft_strcat(char *dst, const char *src);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
+
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin_free(char *s1, char *s2, bool f1, bool f2);
 
 /* mem */
 void			ft_bzero(void *s, size_t n);
@@ -105,10 +115,8 @@ void			*ft_memmove(void *dst, const void *src, size_t n);
 int				ft_atoi(const char *nptr);
 long			ft_atol(const char *nptr);
 double			ft_atof(const char *str);
-char			*ft_strdup(const char *s);
 
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
@@ -146,8 +154,6 @@ size_t			ft_pb_f(const bool w, const char *str);
 bool			ft_pb_oms(const bool w, const char *str, const size_t size);
 bool			ft_pb_omsa(const bool w, const char *str, const size_t size);
 
-char			*ft_strjoin_free(char *s1, char *s2,
-					bool const f1, bool const f2);
 char			*ft_str_extend(char *str, const size_t size,
 					const size_t capacity);
 
