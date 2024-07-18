@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:22:18 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:23:55 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,10 @@ char			*ft_strrchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
+size_t			ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
+size_t			ft_strocpy(char *dst, const char *src, size_t size);
+
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 
 /* mem */
@@ -138,9 +141,6 @@ size_t			ft_pb_f(const bool w, const char *str);
 bool			ft_pb_oms(const bool w, const char *str, const size_t size);
 bool			ft_pb_omsa(const bool w, const char *str, const size_t size);
 
-size_t			ft_strcpy(char *dst, const char *src);
-size_t			ft_strlcpy(char *dst, const char *src, const size_t size);
-size_t			ft_strocpy(char *dst, const char *src, const size_t size);
 char			*ft_strjoin_free(char *s1, char *s2,
 					bool const f1, bool const f2);
 char			*ft_str_extend(char *str, const size_t size,
