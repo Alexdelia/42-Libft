@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:16:44 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:22:18 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ bool			ft_isalnum(int c);
 
 bool			ft_isprint(int c);
 bool			ft_isspace(int c);
-
-bool			ft_isin(const char *str, const char c);
 
 /* char */
 int				ft_toupper(int c);
