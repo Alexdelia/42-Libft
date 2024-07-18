@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 16:06:48 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:21:49 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:58:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	return (false);
+	return (NULL);
 }
