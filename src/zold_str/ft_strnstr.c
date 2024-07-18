@@ -6,30 +6,28 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 16:47:31 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:20 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:31:38 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char
-	*ft_strnstr(const char *s, const char *to_find, size_t len)
+char *ft_strnstr(const char *s, const char *match, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	y;
+	size_t	x;
 
-	if (!to_find[0])
+	if (!s || !match || !*match)
 		return ((char *)s);
-	i = 0;
-	while (i < len && s[i])
+	y = 0;
+	while (y < len && s[y])
 	{
-		j = 0;
-		while (s[i + j] && to_find[j]
-			&& i + j < len && s[i + j] == to_find[j])
-			j++;
-		if (!to_find[j])
-			return ((char *)(s + i));
-		i++;
+		x = 0;
+		while (y + x < len && s[y + x] && match[x] && s[y + x] == match[x])
+			x++;
+		if (!match[x])
+			return ((char *)(s + y));
+		y++;
 	}
 	return (NULL);
 }
