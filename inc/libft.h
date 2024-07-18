@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:52:08 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 20:10:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,14 @@ int				ft_tolower(int c);
 /* nbr */
 size_t			ft_abs(ssize_t n);
 
+/* # len */
 size_t			ft_nbrlen(ssize_t n);
 size_t			ft_unbrlen(size_t n);
+size_t			ft_nbrlen_base(ssize_t n, size_t base);
+size_t			ft_unbrlen_base(size_t n, size_t base);
 
 /* str */
+/* # len */
 size_t			ft_strlen(const char *str);
 
 /* # search */

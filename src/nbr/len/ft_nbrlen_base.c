@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 14:39:24 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 20:07:16 by adelille         ###   ########.fr       */
+/*   Created: 2024/07/18 20:07:52 by adelille          #+#    #+#             */
+/*   Updated: 2024/07/18 20:09:24 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline size_t	ft_nbrlen(ssize_t n)
+inline size_t	ft_nbrlen_base(ssize_t n, size_t base)
 {
-	return (ft_nbrlen_base(n, 10));
+	if (n < 0)
+		return (1 + ft_unbrlen_base((size_t)-n, base));
+	return (ft_unbrlen_base((size_t)n, base));
 }

@@ -6,23 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:39:24 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:48:55 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 20:07:29 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_unbrlen(size_t n)
+inline size_t	ft_unbrlen(size_t n)
 {
-	size_t	i;
-
-	if (n == 0)
-		return (1);
-	i = 0;
-	while (n)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
+	return (ft_unbrlen_base(n, 10));
 }
