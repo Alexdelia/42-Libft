@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:46:42 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:50:07 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,29 @@ void			*ft_memmove(void *dst, const void *src, size_t n);
 
 /* lst */
 
+/* I/O */
+
+ssize_t			ft_ps(const char *str);
+ssize_t			ft_psc(const char *str, const char *color);
+ssize_t			ft_pser(const char *str);
+ssize_t			ft_pserc(const char *str, const char *color);
+ssize_t			ft_pn(int nbr);
+ssize_t			ft_pner(int nbr);
+ssize_t			ft_pnc(int nbr, const char *color);
+ssize_t			ft_pnerc(int nbr, const char *color);
+
+ssize_t			ft_prgb(const int r, const int g, const int b);
+ssize_t			ft_prgb_b(const int r, const int g, const int b);
+
+void			ft_pb(const bool w, const char *str);
+void			ft_pb_s(const bool w, const char *str, const size_t size);
+size_t			ft_pb_f(const bool w, const char *str);
+bool			ft_pb_oms(const bool w, const char *str, const size_t size);
+bool			ft_pb_omsa(const bool w, const char *str, const size_t size);
+
+char			*gal(const int fd, size_t *size, const bool all);
+
+
 /* TODO */
 
 int				ft_atoi(const char *nptr);
@@ -139,27 +162,7 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
-ssize_t			ft_ps(const char *str);
-ssize_t			ft_psc(const char *str, const char *color);
-ssize_t			ft_pser(const char *str);
-ssize_t			ft_pserc(const char *str, const char *color);
-ssize_t			ft_pn(int nbr);
-ssize_t			ft_pner(int nbr);
-ssize_t			ft_pnc(int nbr, const char *color);
-ssize_t			ft_pnerc(int nbr, const char *color);
-
-ssize_t			ft_prgb(const int r, const int g, const int b);
-ssize_t			ft_prgb_b(const int r, const int g, const int b);
-
-void			ft_pb(const bool w, const char *str);
-void			ft_pb_s(const bool w, const char *str, const size_t size);
-size_t			ft_pb_f(const bool w, const char *str);
-bool			ft_pb_oms(const bool w, const char *str, const size_t size);
-bool			ft_pb_omsa(const bool w, const char *str, const size_t size);
-
 char			*ft_str_extend(char *str, const size_t size,
 					const size_t capacity);
-
-char			*gal(const int fd, size_t *size, const bool all);
 
 #endif
