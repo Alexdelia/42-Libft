@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:39:13 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:41:44 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,12 +158,6 @@ char			*ft_str_extend(char *str, const size_t size,
 					const size_t capacity);
 
 int				ft_nbrlen(int nb);
-bool			ft_is_prime(int n);
-bool			ft_is_prime_ul(unsigned long n);
-int				ft_next_prime(int n);
-int				ft_prev_prime(int n);
-unsigned long	ft_next_prime_ul(unsigned long n);
-unsigned long	ft_prev_prime_ul(unsigned long n);
 
 char			*gal(const int fd, size_t *size, const bool all);
 
