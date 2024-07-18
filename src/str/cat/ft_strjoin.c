@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:06:39 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:20 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:39:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-char	*ft_strjoin_free(char *s1, char *s2, bool const f1, bool const f2)
+char	*ft_strjoin_free(char *s1, char *s2, bool f1, bool f2)
 {
 	char	*res;
 
