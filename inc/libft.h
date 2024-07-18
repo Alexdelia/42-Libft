@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:59:13 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:06:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ int				ft_tolower(int c);
 size_t			ft_abs(ssize_t n);
 
 /* str */
+size_t			ft_strlen(const char *str);
+
+char			*ft_strchr(const char *s, int c);
+char			*ft_strrchr(const char *s, int c);
 
 /* mem */
 void			ft_bzero(void *s, size_t n);
@@ -82,10 +86,6 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 
 /* lst */
-size_t			ft_strlen(const char *str);
-
-char			*ft_strchr(const char *s, int c);
-char			*ft_strrchr(const char *s, int c);
 
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
