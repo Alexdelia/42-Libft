@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2024/07/18 19:27:24 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:34:28 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ size_t			ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strocpy(char *dst, const char *src, size_t size);
 
+// size_t			ft_strcat(char *dst, const char *src);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 
 /* mem */
