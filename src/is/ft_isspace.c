@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:27:11 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:27:46 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:03:55 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_ispace(int c)
+bool	ft_isspace(int c)
 {
 	return (c == ' '
 		|| c == '\t'
