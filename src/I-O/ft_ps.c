@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:09:31 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/19 14:19:19 by adelille         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:02:34 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 ssize_t	ft_ps(const char *str)
 {
-	return (write(STDOUT, str, ft_strlen(str)));
+	return (write(STDOUT_FILENO, str, ft_strlen(str)));
 }
 
 ssize_t	ft_psc(const char *str, const char *color)
 {
-	return (write(STDOUT, color, ft_strlen(color))
-		+ write(STDOUT, str, ft_strlen(str))
-		+ write(STDOUT, DEF, ft_strlen(DEF)));
+	return (write(STDOUT_FILENO, color, ft_strlen(color))
+		+ write(STDOUT_FILENO, str, ft_strlen(str))
+		+ write(STDOUT_FILENO, DEF, ft_strlen(DEF)));
 }
 
 ssize_t	ft_pser(const char *str)
 {
-	return (write(STDERR, str, ft_strlen(str)));
+	return (write(STDERR_FILENO, str, ft_strlen(str)));
 }
 
 ssize_t	ft_pserc(const char *str, const char *color)
 {
-	return (write(STDERR, color, ft_strlen(color))
-		+ write(STDERR, str, ft_strlen(str))
-		+ write(STDERR, DEF, ft_strlen(DEF)));
+	return (write(STDERR_FILENO, color, ft_strlen(color))
+		+ write(STDERR_FILENO, str, ft_strlen(str))
+		+ write(STDERR_FILENO, DEF, ft_strlen(DEF)));
 }
