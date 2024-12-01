@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2023/11/19 13:50:46 by adelille         ###   ########.fr        #
+#    Updated: 2024/12/01 13:30:25 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,12 @@ CC = 	clang
 AR =	ar rcs
 RM = 	rm -rf
 
+# **************************************************************************** #
+#	FLAGS	#
+
 CFLAGS =	-Wall -Werror -Wextra
 
-# CFLAGS +=	-g3
+# CFLAGS +=	-g
 # CFLAGS +=	-fsanitize=address
 
 # CFLAGS +=	-Wsuggest-attribute=const
@@ -25,7 +28,11 @@ CFLAGS =	-Wall -Werror -Wextra
 
 # CFLAGS +=	-O2
 
-LKFLAGS =	-MMD -MP
+ASMFLAGS =	-MMD -MP
+ASMINC =	-I./inc/
+
+# LDFLAGS =
+# LDLIBS =	-l...
 
 # **************************************************************************** #
 #	MAKEFILE	#
@@ -62,20 +69,20 @@ PROGRESS_FILL =		$(SECONDARY)█
 # **************************************************************************** #
 #	LIBRARY	#
 
-# LIB_PATH =	./libft/
-# LIB_NAME =	$(LIB_PATH)libft.a
-# LIB_INC =		-I$(LIB_PATH)inc/
+# LOCAL_LIB_NAME =	./libft/libft.a
+# ASMINC +=			-I./libft/inc/
+
+# LOCAL_LIB_PATH =	$(dir $(LOCAL_LIB_NAME))
 
 # **************************************************************************** #
 #	SOURCE	#
 
 SRC_PATH =	./src/
 OBJ_PATH =	./obj/
-INC =		-I./inc/ #$(LIB_INC)
 
 # SRC_NAME = ...
-
 # SRC =		$(addprefix $(SRC_PATH), $(SRC_NAME))
+
 SRC =		$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
 SRC_NAME =	$(subst $(SRC_PATH), , $(SRC))
 
@@ -102,7 +109,7 @@ name = 0
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(LKFLAGS) $(INC) -c $< -o $@
+	$(CC) $(CFLAGS) $(ASMFLAGS) $(ASMINC) -c $< -o $@
 	@printf "$(D)$(PROGRESS_FILL)$(D)"
 
 all:		launch $(NAME)
@@ -119,7 +126,7 @@ $(NAME):	$(OBJ) #$(LIB_NAME)
 	$(AR) $(NAME) $(OBJ)
 #	$(CC) $(CFLAGS) $(OBJ) $(LIB_NAME) -o $(NAME)
 	@$(eval name=1)
-	
+
 # $(LIB_NAME):
 # 	@make -C $(LIB_PATH)
 # 	@printf "$(B)$(PRIMARY)$(LIB_NAME) compiled$(D)\n"
